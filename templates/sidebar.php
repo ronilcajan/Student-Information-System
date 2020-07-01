@@ -16,52 +16,129 @@
                     <a class="nav-link" href="#new_user" data-toggle="modal"><i class="fas fa-user-plus mr-2"></i><small>Add User</small></a>
                 </nav>
             </div>
-            <div class="sb-sidenav-menu-heading"><i class="fas fa-print mr-1"></i>Print/Export</div>
+            <div class="sb-sidenav-menu-heading">Print/Export</div>
             <small>
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FMA
-            </a>
-            <a class="nav-link" href="tables.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FMA_CAM
-            </a>
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FMDA
-            </a>
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FPA
-            </a>
-            <a class="nav-link" href="Print.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print ISITS
-            </a>
-            <a class="nav-link" href="Print.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FASIMH_IAR
-            </a>
-            <a class="nav-link" href="Print.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FASIMH_IP
-            </a>
-            <a class="nav-link" href="Print.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FASIMH_IM
-            </a>
-            <a class="nav-link" href="Print.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FASIMH_SIPOB
-            </a>
-            <a class="nav-link" href="Print.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FASIMH_SIH
-            </a>
-            <a class="nav-link mb-5" href="Print.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                Print FASIMH_TC
-            </a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf1" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FMA
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf1" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Affichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf2" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FMA_CAM
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf2" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf3" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FMDA
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf3" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf4" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FPA
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf4" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf5" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print ISITS
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf5" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf6" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FASIMH_IAR
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf6" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf7" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FASIMH_IP
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf7" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf8" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FASIMH_IM
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf8" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf9" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FASIMH_SIPOB
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf9" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf10" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FASIMH_SIH
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="print-pdf10" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#print-pdf11" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-print mr-1"></i></div>
+                    Print FASIMH_TC
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse mb-5" id="print-pdf11" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Afichage PDF</a>
+                        <a class="nav-link" href="#" data-toggle="modal"><i class="fas fa-file-pdf mr-2"></i>Signature PDF</a>
+                    </nav>
+                </div>
             </small>
         </div>
     </div>

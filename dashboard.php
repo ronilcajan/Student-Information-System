@@ -85,8 +85,11 @@
                                             </tr>
                                         </thead>
                                         <tbody class="small table-hover">
-                                        <?php if(!empty($result)){ $i = 0;?>
-                                            <?php while($row = mysqli_fetch_assoc($result)){?>
+                                        <?php if(!empty($result)){ $i = 0;
+                                            ?>
+                                            <?php while($row = mysqli_fetch_array($result)){
+
+                                                ?>
                                                 <tr>
                                                     <td>
                                                         <a class="nav-link" href="edit_student.php?code=<?php echo $row['code_inscription'];?>" title="Edit student"><i class="fas fa-edit mr-2 text-success p-0"></i></a>
