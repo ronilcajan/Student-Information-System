@@ -26,7 +26,7 @@ class PDF_MySQL_Table extends FPDF
         if($fill)
             $this->SetFillColor($this->HeaderColor[0],$this->HeaderColor[1],$this->HeaderColor[2]);
         foreach($this->aCols as $col)
-            $this->Cell($col['w'],6,$col['c'],'B',0,'C',$fill);
+            $this->Cell($col['w'],6,$col['c'],0,0,'C',$fill);
         $this->Ln();
     }
 
@@ -80,24 +80,7 @@ class PDF_MySQL_Table extends FPDF
     {
         // Execute query
         $res=mysqli_query($link,$query) or die('Error: '.mysqli_error($link)."<br>Query: $query");
-        // Add all columns if none was specified
-        // if(count($this->aCols)==0)
-        // {
-        //     $nb=mysqli_num_fields($res);
-        //     for($i=0;$i<$nb;$i++)
-        //         $this->AddCol();
-        // }
-        // // Retrieve column names when not specified
-        // foreach($this->aCols as $i=>$col)
-        // {
-        //     if($col['c']=='')
-        //     {
-        //         if(is_string($col['f']))
-        //             $this->aCols[$i]['c']=ucfirst($col['f']);
-        //         else
-        //             $this->aCols[$i]['c']=ucfirst(mysqli_fetch_field_direct($res,$col['f'])->name);
-        //     }
-        // }
+
         // Handle properties
         if(!isset($prop['width']))
             $prop['width']=0;
@@ -122,7 +105,7 @@ class PDF_MySQL_Table extends FPDF
         // Print header
         $this->TableHeader();
         // Print rows
-        $this->SetFont('Arial','',11);
+        $this->SetFont('Arial','',10);
         $this->ColorIndex=0;
         $this->ProcessingTable=true;
         

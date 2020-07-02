@@ -44,7 +44,7 @@
                                 <div class="w-100 col-md-8" align="right">
                                     <form action="model/import_excel.php" method="post"
                                     name="frmExcelImport" enctype="multipart/form-data">
-                                        <label>Choose Excel
+                                        <label>Upload Excel
                                             File</label> <input type="file" name="file"
                                             id="file" accept=".xls,.xlsx,.csv" required>
                                         <button type="submit" name="import"
@@ -99,7 +99,7 @@
                                                     <td><?php echo $row['surname'];?></td>
                                                     <td><?php echo $row['cin'];?></td>
                                                     <td><?php echo $row['etablissement'];?></td>
-                                                    <td><?php echo $row['date_exam'];?></td>
+                                                    <td><?php echo date('j/n/Y',strtotime($row['date_exam']));?></td>
                                                     <td><?php echo $row['heure_examen'];?></td>
                                                     <td><?php echo $row['university'];?></td>
                                                     <td><?php echo $row['exam_type'];?></td>

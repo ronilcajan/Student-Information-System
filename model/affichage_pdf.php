@@ -37,7 +37,7 @@
         function Promotion($label){
             $this->SetLeftMargin(20);
             // Arial 12
-            $this->SetFont('Helvetica','BU',11);
+            $this->SetFont('Helvetica','BU',10);
             // text color
             $this->SetTextColor(34,43,53);
             $this->SetFillColor(255, 255, 255);
@@ -49,7 +49,7 @@
         function Etablissement($label){
             $this->SetLeftMargin(20);
             // Arial 12
-            $this->SetFont('Arial','BU',11);
+            $this->SetFont('Arial','BU',10);
             // text color
             $this->SetTextColor(34,43,53);
             $this->SetFillColor(255, 255, 255);
@@ -85,7 +85,7 @@
             $pdf->AddCol('NO',15,'NO','C');
             $pdf->AddCol('code_inscription',50,'ID_Inscription','L');
             $pdf->AddCol('name',40,'Nom','L');
-            $pdf->AddCol('surname',40,'Prénom','L');
+            $pdf->AddCol('surname',40,'Prenom','L');
             $pdf->AddCol('emplacement',30,'Emplacement','C');
             $prop = array('HeaderColor'=>array(34,43,53));
             $pdf->Table($db,"SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'",$prop);
