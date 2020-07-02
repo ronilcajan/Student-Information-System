@@ -31,3 +31,14 @@
         </button>
      </div>
 <?php endif; ?>
+
+<?php if(isset($_GET['not_found'])): ?>
+    <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+    <?php if($_GET['not_found']==1){?>
+        <p><span class="text-danger"><small><strong><i class="fas fa-check mr-1"></i>Warning!</strong> Data not found.</small></span></p>
+    <?php } ?>
+    <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+     </div>
+<?php endif; ?>

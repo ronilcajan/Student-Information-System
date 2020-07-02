@@ -46,7 +46,7 @@
                                     name="frmExcelImport" enctype="multipart/form-data">
                                         <label>Choose Excel
                                             File</label> <input type="file" name="file"
-                                            id="file" accept=".xls,.xlsx,.csv">
+                                            id="file" accept=".xls,.xlsx,.csv" required>
                                         <button type="submit" name="import"
                                             class="btn btn-success btn-sm"><i class="fas fa-file-excel mr-1"></i>Import Excel</button>
                                     </form>
@@ -85,8 +85,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="small table-hover">
-                                        <?php if(!empty($result)){ $i = 0;
-                                            ?>
+                                        <?php if(!empty($result)){ $i = 0;?>
                                             <?php while($row = mysqli_fetch_array($result)){
 
                                                 ?>

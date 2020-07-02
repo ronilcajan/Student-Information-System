@@ -1,27 +1,26 @@
 <?php
     include('../server/server.php');
     require('../fpdf/mysql_table.php');
-
+    
     class PDF extends PDF_MySQL_Table
     {
         function Header(){
             global $title;
             global $promotion;
-            global $eta;
+            global $formation;
             // Arial bold 40
-            $this->SetFont('Helvetica','B',40);
+            $this->SetFont('Arial','B',50);
             // Calculate width of title and position
-            $w = $this->GetStringWidth($title)+124;
+            $w = $this->GetStringWidth($title)+110;
             $this->SetX((210-$w)/2);
             // Colors of frame, background and text
             $this->SetFillColor(34,43,53);
             $this->SetTextColor(236, 239, 244);
-            // Thickness of frame (1 mm)
             // Title
-            $this->Cell($w,14,$title,1,1,'C',true);
+            $this->Cell($w,20,$title,1,1,'C',true);
             // Line break
             $this->Ln(5);
-            $this->Etablissement($eta);
+            $this->Etablissement($formation);
             $this->Promotion($promotion);
             parent::Header();
         }
@@ -50,7 +49,7 @@
         function Etablissement($label){
             $this->SetLeftMargin(20);
             // Arial 12
-            $this->SetFont('Helvetica','BU',11);
+            $this->SetFont('Arial','BU',11);
             // text color
             $this->SetTextColor(34,43,53);
             $this->SetFillColor(255, 255, 255);
@@ -68,27 +67,34 @@
         $eta = mysqli_real_escape_string($db, $_POST['etab']);
         $formation = mysqli_real_escape_string($db, $_POST['form']);
 
-        if($salle < 10){
-            $title = 'Salle 0'.$salle;
+        $sql="SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'";
+        $res = mysqli_query($db, $sql);
+
+        if(mysqli_num_rows($res)>0){
+
+            if($salle < 10){
+                $title = 'Salle 0'.$salle;
+            }else{
+                $title = 'Salle '.$salle;
+            }
+
+            $pdf = new PDF();
+            $pdf->AliasNbPages();
+            $pdf->AddPage();
+
+            $pdf->AddCol('NO',15,'NO','C');
+            $pdf->AddCol('code_inscription',50,'ID_Inscription','L');
+            $pdf->AddCol('name',40,'Nom','L');
+            $pdf->AddCol('surname',40,'Prénom','L');
+            $pdf->AddCol('emplacement',30,'Emplacement','C');
+            $prop = array('HeaderColor'=>array(34,43,53));
+            $pdf->Table($db,"SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'",$prop);
+            $pdf->Output();
+        
         }else{
-            $title = 'Salle '.$salle;
-        }
-
-        $pdf = new PDF();
-        $pdf->AliasNbPages();
-        $title = 'Salle 05';
-        $pdf->AddPage();
-        // Second table: specify 5 columns
-        // $pdf->AddCol('NO',15,'NO','C');
-        $pdf->AddCol('NO',15,'NO','C');
-        $pdf->AddCol('code_inscription',50,'ID_Inscription','L');
-        $pdf->AddCol('name',40,'Name','L');
-        $pdf->AddCol('surname',40,'Prename','L');
-        $pdf->AddCol('emplacement',30,'Emplacement','C');
-        $prop = array('HeaderColor'=>array(34,43,53));
-        $pdf->Table($db,"SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'",$prop);
-        $pdf->Output();
-
+        
+        header('location: ../dashboard.php?not_found=1');
+    }
     }else{
         
         header('location: ../dashboard.php');
