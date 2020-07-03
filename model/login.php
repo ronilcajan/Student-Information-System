@@ -15,8 +15,7 @@ if (isset($_POST['login'])){
 			while ($row = mysqli_fetch_assoc($result)) {
 
 				$_SESSION['username'] = $row['username'];
-				$user = $_SESSION['username'];
-				$user = $_SESSION['user_type'];
+				$_SESSION['user_type'] = $row['user_type'];
 				header('location: dashboard.php');
 			}
 		}else{

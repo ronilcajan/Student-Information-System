@@ -11,10 +11,11 @@
             global $hrs_exam;
             global $new_date;
             global $header;
-            // Arial bold 40
+
+
+            // Arial bold 
             $this->SetFont('Arial','B',16);
             // Calculate width of title and position
-
             $w = $this->GetStringWidth($title)+95;
             $this->SetX((-355-$w)/2);
 
@@ -24,6 +25,7 @@
             // Title
             $this->Cell($w,30,$title,0,1,'C',true);
             $this->Subtitle($w);
+            $this->Image('../assets/img/logo.png',15,10,30);
             // $this->Ln(1);
             // $this->Cell($w,10,"-Liste de presence et de remise des copies-",1,1,'C',true);
             $this->Ln(5);
@@ -147,6 +149,7 @@
             $header = array('NO', 'ID_Inscription', 'Nom', 'Prenom','NoCIN', 'Emplacement', "Emergement de presence", "Etudiants","Resp. Salle", "Emargement de remise des copies" );
             
             $title  = strtoupper($uni)."/".strtoupper($etab).": ".ucwords($exam_type)." ".ucfirst($semestre)." ".ucfirst($session).": Annee universitaire ".$year;
+
             $sql    = "SELECT code_inscription,name,surname,cin,emplacement FROM student WHERE etablissement='$etab' AND salle=$salle AND module='$module' AND date_exam='$new_date' AND heure_examen='$hrs_exam' AND exam_type='$exam_type' AND semester='$semestre' AND session='$session' AND year='$year' AND university='$uni'";
 
             $res    = mysqli_query($db,$sql);
@@ -162,6 +165,7 @@
                 $pdf->SetAutoPageBreak(true, 30);
                 $pdf->FirstTable($datas);
                 $pdf->AcceptPAgeBreak(true);
+
                 $pdf->Output();
 
 
@@ -173,44 +177,3 @@
         
         header('location: ../dashboard.php');
     }
-
-    // if(isset($_POST['print_aff'])){
-
-    //     $salle = mysqli_real_escape_string($db, $_POST['salle']);
-    //     $promotion = mysqli_real_escape_string($db, $_POST['promo']);
-    //     $eta = mysqli_real_escape_string($db, $_POST['etab']);
-    //     $formation = mysqli_real_escape_string($db, $_POST['form']);
-
-    //     $sql="SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'";
-    //     $res = mysqli_query($db, $sql);
-
-    //     if(mysqli_num_rows($res)>0){
-
-    //         if($salle < 10){
-    //             $title = 'Salle 0'.$salle;
-    //         }else{
-    //             $title = 'Salle '.$salle;
-    //         }
-
-    //         $pdf = new PDF();
-    //         $pdf->AliasNbPages();
-    //         $pdf->AddPage();
-
-    //         $pdf->AddCol('NO',15,'NO','C');
-    //         $pdf->AddCol('code_inscription',50,'ID_Inscription','L');
-    //         $pdf->AddCol('name',40,'Nom','L');
-    //         $pdf->AddCol('surname',40,'Prenom','L');
-    //         $pdf->AddCol('emplacement',30,'Emplacement','C');
-    //         $prop = array('HeaderColor'=>array(34,43,53));
-    //         $pdf->Table($db,"SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'",$prop);
-    //         $pdf->Output();
-        
-    //     }else{
-        
-    //     header('location: ../dashboard.php?not_found=1');
-    // }
-    // }else{
-        
-    //     header('location: ../dashboard.php');
-    // }
-

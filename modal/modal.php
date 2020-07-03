@@ -61,15 +61,18 @@
               <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="new_pass" required />
           </div>
           <div class="form-group">
-              <label class="small mb-1" for="inputPassword">Enter New Password</label>
-              <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="new_pass" required />
+              <label class="small mb-1" for="usertype">Select User Type</label>
+              <select class="form-control" id="inputPassword" name="user_type" required >
+              	<option value="admin">Admin</option>
+              	<option value="guest">Guest</option>
+              </select>
           </div>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" name="add_user">Print</button>
+        <button type="submit" class="btn btn-primary" name="add_user">Submit</button>
       </div>
         </form>
     </div>

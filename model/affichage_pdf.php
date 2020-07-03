@@ -18,6 +18,7 @@
             $this->SetTextColor(236, 239, 244);
             // Title
             $this->Cell($w,20,$title,1,1,'C',true);
+            $this->Image('../assets/img/logo.png',15,5.30,28);
             // Line break
             $this->Ln(5);
             $this->Etablissement($formation);

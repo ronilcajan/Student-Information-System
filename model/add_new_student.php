@@ -24,8 +24,12 @@
 		$emplace	= mysqli_real_escape_string($db, $_POST['emplacement']);
 
 		$hrs_exam 	= $hrs_exam1."H".$hrs_exam2."min";
-		$sem 		= "Semester ".$semester;
-		$ses 		= "Session ".$session;
+		$sem 		= "Semestre ".$semester;
+		$ses 		= "session ".$session;
+
+		$date = strtotime($date_exam);
+
+        $new_date = date('n/j/Y', $date);
 
 		$query = "SELECT code_inscription FROM student WHERE code_inscription='$code_ins'";
 		$result = mysqli_query($db, $query);
@@ -35,7 +39,7 @@
 		}
 
 		if (count($error) == 0){
-			$sql  = "INSERT INTO student (code_inscription,name,surname,cin,etablissement,date_exam,heure_examen,university,exam_type,semester,session,module,formation,promotion,niveau,year,salle,emplacement) VALUES ('$code_ins','$name','$surname','$cin','$etab','$date_exam','$hrs_exam','$uni','$exam_type','$sem','$ses','$module','$forma','$promo','$niveau','$year','$salle','$emplace')";
+			$sql  = "INSERT INTO student (code_inscription,name,surname,cin,etablissement,date_exam,heure_examen,university,exam_type,semester,session,module,formation,promotion,niveau,year,salle,emplacement) VALUES ('$code_ins','$name','$surname','$cin','$etab','$new_date','$hrs_exam','$uni','$exam_type','$sem','$ses','$module','$forma','$promo','$niveau','$year','$salle','$emplace')";
 	  		$insert = mysqli_query($db, $sql);
 	  		if($insert){
 	  			header('location: ../dashboard.php?success=3');

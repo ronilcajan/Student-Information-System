@@ -41,6 +41,7 @@
                                 <div class="col-md-4">
                                     <a class="btn btn-primary btn-sm" href="add_student.php"><i class="fas fa-plus mr-1"></i>Add New</a>
                                 </div>
+                                <?php if($_SESSION['user_type'] == 'admin') { ?>
                                 <div class="w-100 col-md-8" align="right">
                                     <form action="model/import_excel.php" method="post"
                                     name="frmExcelImport" enctype="multipart/form-data">
@@ -51,6 +52,7 @@
                                             class="btn btn-success btn-sm"><i class="fas fa-file-excel mr-1"></i>Import Excel</button>
                                     </form>
                                 </div>
+                            <?php } ?>
                             </div>
                         </div>
                         <div class="card mb-4">

@@ -23,16 +23,14 @@
 		$salle		= mysqli_real_escape_string($db, $_POST['salle']);
 		$emplace	= mysqli_real_escape_string($db, $_POST['emplacement']);
 
-		$query = "SELECT code_inscription FROM student WHERE code_inscription='$code_ins'";
-		$result = mysqli_query($db, $query);
-		if (mysqli_num_rows($result) == 1){
-		  array_push($error, "Code Inscription already in used");
-		  header('location: ../edit_student.php?code='.$old_code.'&&error=5');
-		}
+
+		$date = strtotime($date_exam);
+
+        $new_date = date('n/j/Y', $date);
 
 		if (count($error) == 0){
 
-			$sql  = "UPDATE student SET code_inscription='$code_ins',name='$name',surname='$surname',cin='$cin',etablissement='$etab',date_exam='$date_exam',heure_examen='$hrs_exam',university='$uni',exam_type='$exam_type',semester='$sem',session='$ses',module='$module',formation='$forma',promotion='$promo',niveau='$niveau',year='$year',salle='$salle',emplacement='$emplace' WHERE code_inscription='$old_code'";
+			$sql  = "UPDATE student SET code_inscription='$code_ins',name='$name',surname='$surname',cin='$cin',etablissement='$etab',date_exam='$new_date',heure_examen='$hrs_exam',university='$uni',exam_type='$exam_type',semester='$semester',session='$session',module='$module',formation='$forma',promotion='$promo',niveau='$niveau',year='$year',salle='$salle',emplacement='$emplace' WHERE code_inscription='$old_code'";
 
 	  		$update = mysqli_query($db, $sql);
 	  		if($update){

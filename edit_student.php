@@ -84,7 +84,7 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="small mb-1" for="date_exam">Enter Date Exam</label>
-                                            <input class="form-control form-control-sm" id="date_exam" type="date" placeholder="Enter Date Exam" value="<?php echo $row['date_exam'];?>" name="date_exam" required />
+                                            <input class="form-control form-control-sm" id="date_exam" type="date" placeholder="Enter Date Exam" value="<?php echo strftime('%Y-%m-%d', strtotime($row['date_exam']))?>" name="date_exam" required />
                                       </div>
                                     </div>
                                 </div>
