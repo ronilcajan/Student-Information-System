@@ -1,11 +1,6 @@
 <?php
 include('../server/server.php');
 
-ob_start();
-
-echo "<progress value='1' max='100> Please wait... </progress>";
-ob_flush();
-
 use \PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 require_once ('../vendor/autoload.php');
 $error  = array();
@@ -103,7 +98,6 @@ if (isset($_POST["import"])) {
 	            }
         	}
         }
-        ob_end_flush();
         header("location: ../dashboard.php?success");
     }
 }
