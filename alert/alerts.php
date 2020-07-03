@@ -22,7 +22,7 @@
     <?php }elseif($_GET['success'] == 3){?>
         <p><span class="text-success"><small><strong><i class="fas fa-check mr-1"></i>Success!</strong> Student  has been added.</small></span></p>
     <?php }elseif($_GET['success'] == 4){?>
-        <p><span class="text-success"><small><strong><i class="fas fa-check mr-1"></i>Success!</strong> Student  has been added.</small></span></p>
+        <p><span class="text-success"><small><strong><i class="fas fa-check mr-1"></i>Success!</strong> Student  has been edited.</small></span></p>
     <?php }else{ ?>
         <p><span class="text-success"><small><strong><i class="fas fa-check mr-1"></i>Success!</strong> Excel imported.</small></span></p>
     <?php } ?>
