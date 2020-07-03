@@ -18,7 +18,7 @@
             $this->SetTextColor(236, 239, 244);
             // Title
             $this->Cell($w,20,$title,1,1,'C',true);
-            $this->Image('../assets/img/logo.png',15,5.30,28);
+            $this->Image('../assets/img/logo.png',15,6,28);
             // Line break
             $this->Ln(5);
             $this->Etablissement($formation);
@@ -67,8 +67,9 @@
         $promotion = mysqli_real_escape_string($db, $_POST['promo']);
         $eta = mysqli_real_escape_string($db, $_POST['etab']);
         $formation = mysqli_real_escape_string($db, $_POST['form']);
+        $year = mysqli_real_escape_string($db, $_POST['year']);
 
-        $sql="SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'";
+        $sql="SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation' AND year='$year'";
         $res = mysqli_query($db, $sql);
 
         if(mysqli_num_rows($res)>0){
@@ -89,7 +90,7 @@
             $pdf->AddCol('surname',40,'Prenom','L');
             $pdf->AddCol('emplacement',30,'Emplacement','C');
             $prop = array('HeaderColor'=>array(34,43,53));
-            $pdf->Table($db,"SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation'",$prop);
+            $pdf->Table($db,"SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation' AND year='$year'",$prop);
             $pdf->Output();
         
         }else{

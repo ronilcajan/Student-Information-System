@@ -134,6 +134,19 @@
               </select>
           </div>
 
+          <div class="form-group">
+              <label class="small mb-1" for="year">Select Year</label>
+              <select class="form-control form-control-sm" id="year" name="year" required >
+                 <option disabled>Select...</option>
+                <?php 
+                if(!empty($sig5)){
+
+                  foreach ($sig5 as $form) {?>
+                    <option value="<?php echo $form['year'];?>"><?php echo $form['year'];?></option>
+                <?php } }  ?>
+              </select>
+          </div>
+
       </div>
 
       <!-- Modal footer -->
