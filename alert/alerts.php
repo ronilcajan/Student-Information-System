@@ -3,7 +3,9 @@
     <?php if($_GET['error'] == 1){?>
         <p><span class="text-danger"><small><strong><i class="fas fa-exclamation-triangle mr-1"></i>Error!</strong> Password did not match!</small></span></p>
     <?php }elseif($_GET['error'] == 2){?>
-        <p><span class="text-danger"><small><strong><i class="fas fa-exclamation-triangle mr-1"></i>Error!</strong> Password did not match!</small></span></p>
+        <p><span class="text-danger"><small><strong><i class="fas fa-exclamation-triangle mr-1"></i>Error!</strong> The Password is still the same! Nothing change.!</small></span></p>
+    <?php }elseif($_GET['error'] == 3){?>
+        <p><span class="text-danger"><small><strong><i class="fas fa-exclamation-triangle mr-1"></i>Error!</strong> Username aready taken!</small></span></p>
     <?php }else{ ?>
         <p><span class="text-danger"><small><strong><i class="fas fa-exclamation-triangle mr-1"></i>Warning!</strong> Code Inscription already taken.</small></span></p>
         <?php }?>

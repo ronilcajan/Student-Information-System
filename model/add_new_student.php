@@ -31,12 +31,13 @@
 
         $new_date = date('n/j/Y', $date);
 
-		$query = "SELECT code_inscription FROM student WHERE code_inscription='$code_ins'";
-		$result = mysqli_query($db, $query);
-		if (mysqli_num_rows($result) == 1){
-		  array_push($error, "Username already taken");
-		  header('location: ../add_student.php?error=4');
-		}
+        //  ============== Check code_inscription if existing ==========================
+		// $query = "SELECT code_inscription FROM student WHERE code_inscription='$code_ins'";
+		// $result = mysqli_query($db, $query);
+		// if (mysqli_num_rows($result) == 1){
+		//   array_push($error, "Username already taken");
+		//   header('location: ../add_student.php?error=4');
+		// }
 
 		if (count($error) == 0){
 			$sql  = "INSERT INTO student (code_inscription,name,surname,cin,etablissement,date_exam,heure_examen,university,exam_type,semester,session,module,formation,promotion,niveau,year,salle,emplacement) VALUES ('$code_ins','$name','$surname','$cin','$etab','$new_date','$hrs_exam','$uni','$exam_type','$sem','$ses','$module','$forma','$promo','$niveau','$year','$salle','$emplace')";

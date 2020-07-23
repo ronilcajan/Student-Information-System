@@ -58,7 +58,7 @@
           </div>
           <div class="form-group">
               <label class="small mb-1" for="inputPassword">Enter New Password</label>
-              <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="new_pass" required />
+              <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" required />
           </div>
           <div class="form-group">
               <label class="small mb-1" for="usertype">Select User Type</label>
@@ -178,9 +178,20 @@
       <div class="modal-body">
         <p>Options:</p>
         <form method="POST" action="model/signature_pdf.php" target="_blank">
+
           <div class="form-group">
-              <label class="small mb-1" for="salle">Enter Salle</label>
-                <input class="form-control form-control-sm" id="salle" type="number" placeholder="Enter Salle" name="salle" required />
+              <label class="small mb-1" for="salle">Select Salle</label>
+              <select class="form-control form-control-sm" id="salle" name="salle" required >
+                 <option disabled>Select...</option>
+                <?php 
+                if(!empty($sig6)){
+
+                  foreach ($sig6 as $form) {?>
+                    <option value="<?php echo $form['salle']; ?>"><?php echo $form['salle']; ?></option>
+                <?php }
+              }  
+              ?>
+              </select>
           </div>
           <div class="form-group">
               <label class="small mb-1" for="module">Select Module</label>
@@ -202,8 +213,18 @@
           </div>
 
           <div class="form-group">
-              <label class="small mb-1" for="hrs_exam">Heure Examen</label>
-                <input class="form-control form-control-sm" id="hrs_exam" type="text" name="hrs_exam" placeholder="Enter 1H30min" required />
+              <label class="small mb-1" for="hrs_exam">Select Heure Examen</label>
+              <select class="form-control form-control-sm" id="hrs_exam" name="hrs_exam" required >
+                 <option disabled>Select...</option>
+                <?php 
+                if(!empty($sig7)){
+
+                  foreach ($sig7 as $form) {?>
+                    <option value="<?php echo $form['heure_examen']; ?>"><?php echo $form['heure_examen']; ?></option>
+                <?php }
+              }  
+              ?>
+              </select>
           </div>
 
           <div class="form-group">

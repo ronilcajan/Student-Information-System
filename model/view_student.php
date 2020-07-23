@@ -2,7 +2,7 @@
 	include('server/server.php');
 	
 	// view student
-	$sql 		= "SELECT * FROM student";
+	$sql 		= "SELECT * FROM student ORDER BY name";
 	$result		= mysqli_query($db, $sql);
 
 	// view all formation
@@ -30,6 +30,12 @@
 
 	$sql8		= "SELECT DISTINCT year FROM student";
 	$result8	= mysqli_query($db, $sql8);
+
+	$sql9		= "SELECT DISTINCT salle FROM student ORDER BY salle ASC";
+	$result9	= mysqli_query($db, $sql9);
+
+	$sql10		= "SELECT DISTINCT heure_examen FROM student ";
+	$result10	= mysqli_query($db, $sql10);
 
 
 	$data = array();
@@ -64,4 +70,14 @@
   	$sig5 = array();
 	while ($row = mysqli_fetch_array($result8)) {
   		$sig5[] = $row;
+  	}
+
+  	$sig6 = array();
+	while ($row = mysqli_fetch_array($result9)) {
+  		$sig6[] = $row;
+  	}
+
+  	$sig7 = array();
+	while ($row = mysqli_fetch_array($result10)) {
+  		$sig7[] = $row;
   	}

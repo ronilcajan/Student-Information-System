@@ -90,7 +90,7 @@
             $pdf->AddCol('surname',40,'Prenom','L');
             $pdf->AddCol('emplacement',30,'Emplacement','C');
             $prop = array('HeaderColor'=>array(34,43,53));
-            $pdf->Table($db,"SELECT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation' AND year='$year'",$prop);
+            $pdf->Table($db,"SELECT DISTINCT code_inscription,name,surname,emplacement FROM student WHERE etablissement='$eta' AND salle=$salle AND promotion='$promotion' AND formation='$formation' AND year='$year'",$prop);
             $pdf->Output();
         
         }else{
